@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {//test
+class AppDelegate: UIResponder, UIApplicationDelegate {//test hello pj
 
     var window: UIWindow?
 
