@@ -13,6 +13,7 @@ import CoreData
 class DisplayViewController: UIViewController {
     
     
+    @IBOutlet weak var TeamRank: UILabel!
     @IBOutlet weak var TeamNum: UILabel!
     @IBOutlet weak var TeamRecord: UILabel!
     @IBOutlet weak var TeamAuton: UILabel!
@@ -21,6 +22,8 @@ class DisplayViewController: UIViewController {
     var teamnum: String = ""
     var teamauton: String = ""
     var robot: String = ""
+    var record: String = ""
+    var rank: String = ""
     
     
     var existingItem: NSManagedObject!
@@ -34,6 +37,9 @@ class DisplayViewController: UIViewController {
         TeamNum.text = existingItem.valueForKey("teamnum") as? String
         TeamAuton.text = existingItem.valueForKey("teamauton") as? String
         TeamLiftType.text = existingItem.valueForKey("robot") as? String
+        TeamRecord.text = existingItem.valueForKey("record") as? String
+        TeamRank.text = existingItem.valueForKey("rank") as? String
+        
         
         
         
@@ -65,6 +71,7 @@ class DisplayViewController: UIViewController {
             ViewCon.teamnum = existingItem.valueForKey("teamnum") as! String
             ViewCon.teamauton = existingItem.valueForKey("teamauton") as! String
             ViewCon.robot = existingItem.valueForKey("robot") as! String
+     
             
             ViewCon.editingItem = existingItem
 

@@ -18,6 +18,9 @@ class AddViewController: UIViewController {
     var teamnum: String = ""
     var teamauton: String = ""
     var robot: String = ""
+    var record: String = ""
+    var rank: String = ""
+    
     
     
     var editingItem: NSManagedObject!
@@ -86,6 +89,9 @@ class AddViewController: UIViewController {
             newitem.robot = TextFieldRobot.text!
             newitem.teamauton = TextFieldAuton.text!
             newitem.teamnum = TextFieldTeamNum.text!
+            
+            //newitem.rank = (find a teams rank)
+            //newitem.record = (find a teams record)
             
             
         }

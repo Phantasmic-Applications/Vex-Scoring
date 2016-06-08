@@ -147,6 +147,9 @@ class TableViewController: UITableViewController {
             ViewCon.teamnum = selectedItem.valueForKey("teamnum") as! String
             ViewCon.teamauton = selectedItem.valueForKey("teamauton") as! String
             ViewCon.robot = selectedItem.valueForKey("robot") as! String
+            ViewCon.rank = selectedItem.valueForKey("rank") as! String
+            ViewCon.record = selectedItem.valueForKey("record") as! String
+            
             
             ViewCon.existingItem = selectedItem
             
