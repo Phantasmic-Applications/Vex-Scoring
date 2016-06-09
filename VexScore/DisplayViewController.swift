@@ -128,7 +128,7 @@ class DisplayViewController: UIViewController {
                     if let inputTeam = self.searchForTeam() {
                         self.TeamRecord.text = "\(inputTeam.wins!)-\(inputTeam.losses!)-\(inputTeam.ties!)"
                         self.TeamRank.text = String(inputTeam.rank!)
-                        self.AutonomousPoints.text = String(inputTeam.autonomousPoints!)
+                        //self.AutonomousPoints.text = String(inputTeam.autonomousPoints!)
                         self.ScorePoints.text = String(inputTeam.scorePoints!)
                     }
                 }
