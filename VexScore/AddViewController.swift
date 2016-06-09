@@ -20,6 +20,10 @@ class AddViewController: UIViewController {
     var robot: String = ""
     var record: String = ""
     var rank: String = ""
+    var autonomouspoints: String = ""
+    var scorepoints: String = ""
+    var teamname: String = ""
+ 
     
     
     
@@ -90,10 +94,15 @@ class AddViewController: UIViewController {
             newitem.teamauton = TextFieldAuton.text!
             newitem.teamnum = TextFieldTeamNum.text!
             
+            
             //ANDREW: THIS IS THE COMMENT I AM TALKING ABOUT: ADD CODE TO MAKE .rank and .record TO GO TO THEIR STRINGS
             
             newitem.rank = ""
             newitem.record = ""
+            newitem.autonomouspoints = ""
+            newitem.scorepoints = ""
+            newitem.teamname = ""
+            
             
             
         }

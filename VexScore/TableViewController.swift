@@ -72,11 +72,14 @@ class TableViewController: UITableViewController {
         
         let data: NSManagedObject = List[indexPath.row] as! NSManagedObject
         
-        cell.TeamNum?.text = data.valueForKey("teamnum") as? String
+        cell.TeamNum?.text = data.valueForKey("teamnum")  as? String
         cell.RobotInfo?.text = data.valueForKey("robot") as? String
         cell.TeamAuton?.text = data.valueForKey("teamauton") as? String
         cell.TeamRank?.text = data.valueForKey("rank") as? String
         cell.TeamRecord?.text = data.valueForKey("record") as? String
+        cell.TeamName?.text = data.valueForKey("teamname") as? String
+        
+        
         
         return cell
         

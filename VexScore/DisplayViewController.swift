@@ -18,12 +18,20 @@ class DisplayViewController: UIViewController {
     @IBOutlet weak var TeamRecord: UILabel!
     @IBOutlet weak var TeamAuton: UILabel!
     @IBOutlet weak var TeamLiftType: UILabel!
+    @IBOutlet weak var TeamName: UILabel!
+    @IBOutlet weak var AutonomousPoints: UILabel!
+    @IBOutlet weak var ScorePoints: UILabel!
+    
     
     var teamnum: String = ""
     var teamauton: String = ""
     var robot: String = ""
     var record: String = ""
     var rank: String = ""
+    var autonomouspoints: String = ""
+    var scorepoints: String = ""
+    var teamname: String = ""
+   
     
     
     var existingItem: NSManagedObject!
@@ -39,6 +47,10 @@ class DisplayViewController: UIViewController {
         TeamLiftType.text = existingItem.valueForKey("robot") as? String
         TeamRecord.text = existingItem.valueForKey("record") as? String
         TeamRank.text = existingItem.valueForKey("rank") as? String
+        TeamName.text = existingItem.valueForKey("teamname") as? String
+        AutonomousPoints.text = existingItem.valueForKey("autonomouspoints") as? String
+        ScorePoints.text = existingItem.valueForKey("scorepoints") as? String
+        
         
         
         

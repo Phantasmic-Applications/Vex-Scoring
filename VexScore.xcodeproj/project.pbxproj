@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0611860D1D0990B5004C3193 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0611860C1D0990B5004C3193 /* CoreData.framework */; };
+		061E18031D09C15C008869C6 /* StandardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061E18021D09C15C008869C6 /* StandardViewController.swift */; };
 		061F316F1D08A979001A3C95 /* TitleScreenv1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 061F316E1D08A979001A3C95 /* TitleScreenv1.jpg */; };
 		06746E611D030CD50041D246 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06746E601D030CD50041D246 /* AppDelegate.swift */; };
 		06746E661D030CD50041D246 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06746E641D030CD50041D246 /* Main.storyboard */; };
@@ -42,6 +43,7 @@
 
 /* Begin PBXFileReference section */
 		0611860C1D0990B5004C3193 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		061E18021D09C15C008869C6 /* StandardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StandardViewController.swift; sourceTree = "<group>"; };
 		061F316E1D08A979001A3C95 /* TitleScreenv1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = TitleScreenv1.jpg; sourceTree = "<group>"; };
 		06746E5D1D030CD50041D246 /* VexScore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VexScore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06746E601D030CD50041D246 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 				06746E601D030CD50041D246 /* AppDelegate.swift */,
 				06746E951D0311260041D246 /* TableViewCell.swift */,
 				06746E931D03110B0041D246 /* TableViewController.swift */,
+				061E18021D09C15C008869C6 /* StandardViewController.swift */,
 				06746E971D0311500041D246 /* AddViewController.swift */,
 				06EFB1411D05037F000D1C15 /* DisplayViewController.swift */,
 				06746E991D0313170041D246 /* Model.swift */,
@@ -287,6 +290,7 @@
 				06746E9A1D0313170041D246 /* Model.swift in Sources */,
 				06746E941D03110B0041D246 /* TableViewController.swift in Sources */,
 				06746E611D030CD50041D246 /* AppDelegate.swift in Sources */,
+				061E18031D09C15C008869C6 /* StandardViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

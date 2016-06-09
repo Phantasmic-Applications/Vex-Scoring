@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="15C50" minimumToolsVersion="Automatic">
     <entity name="TeamList1" syncable="YES">
+        <attribute name="autonomouspoints" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="rank" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="record" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="robot" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="scorepoints" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="teamauton" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="teamname" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="teamnum" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="TeamList1" positionX="-54" positionY="27" width="128" height="120"/>
+        <element name="TeamList1" positionX="-54" positionY="27" width="128" height="165"/>
     </elements>
 </model>

@@ -16,6 +16,11 @@ class Model: NSManagedObject {
     @NSManaged var robot: String
     @NSManaged var rank: String
     @NSManaged var record: String
+    @NSManaged var autonomouspoints: String
+    @NSManaged var scorepoints: String
+    @NSManaged var teamname: String
+
+    
     
     
 
