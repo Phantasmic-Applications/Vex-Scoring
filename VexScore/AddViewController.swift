@@ -123,6 +123,7 @@ class AddViewController: UIViewController {
     }
     
     func downloadCSV() {
+        masterTeams = [Team]()
         let url = NSURL(string: "http://ajax.robotevents.com/tm/results/rankings/?format=csv&sku=RE-VRC-13-8611&div=1")
         
         if url != nil {
@@ -140,6 +141,8 @@ class AddViewController: UIViewController {
                     
                     self.csv!.columns.popFirst()
                     self.csv!.columns.popFirst()
+                    
+                    self.masterTeams = [Team]()
                     
                     for index in 0..<self.csv!.rows.count {
                         self.masterTeams.append(Team())
