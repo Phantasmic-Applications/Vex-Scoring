@@ -238,6 +238,9 @@
                                     <constraint firstAttribute="height" constant="74" id="8X9-1w-wC6"/>
                                 </constraints>
                                 <state key="normal" title="Refresh Team Stats"/>
+                                <connections>
+                                    <action selector="refresh:" destination="TIh-LI-fYY" eventType="touchUpInside" id="ZLs-Xs-Z1D"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lift Type:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R8n-dD-653">
                                 <rect key="frame" x="20" y="303" width="72" height="21"/>

@@ -29,6 +29,11 @@ class DisplayViewController: UIViewController {
     var scorepoints: String = ""
     var teamname: String = ""
     
+    var csvString = ""
+    var csv : CSV?
+    
+    var masterTeams = [Team]()
+    
     var existingItem: NSManagedObject!
     
     override func viewDidLoad() {
@@ -51,6 +56,90 @@ class DisplayViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func refresh(sender: AnyObject) {
+        downloadCSV()
+    }
+    
+    func searchForTeam() -> Team? {
+        let teamNumber = TeamNum.text
+        for team in masterTeams {
+            if teamNumber == team.num {
+                return team
+            }
+        }
+        return nil
+    }
+    
+    func downloadCSV() {
+        let url = NSURL(string: "http://ajax.robotevents.com/tm/results/rankings/?format=csv&sku=RE-VRC-13-8611&div=1")
+        
+        if url != nil {
+            let task = NSURLSession.sharedSession().dataTaskWithURL(url!, completionHandler: { (data, response, error) -> Void in
+                
+                if error == nil {
+                    
+                    let urlContent = NSString(data: data!, encoding: NSASCIIStringEncoding) as String!
+                    
+                    self.csvString = urlContent
+                    
+                    self.csvString = self.csvString.stringByReplacingOccurrencesOfString("\"", withString: "")
+                    
+                    self.csv = CSV(string: self.csvString)
+                    
+                    self.csv!.columns.popFirst()
+                    self.csv!.columns.popFirst()
+                    
+                    self.masterTeams = [Team]()
+                    
+                    for index in 0..<self.csv!.rows.count {
+                        self.masterTeams.append(Team())
+                        for data in 0..<self.csv!.rows[index].count {
+                            switch self.csv!.rows[index].first!.0 {
+                            case "rank":
+                                self.masterTeams[index].rank = Int(self.csv!.rows[index].first!.1)
+                                self.csv!.rows[index].popFirst()
+                            case "ties":
+                                self.masterTeams[index].ties = Int(self.csv!.rows[index].first!.1)
+                                self.csv!.rows[index].popFirst()
+                            case "wins":
+                                self.masterTeams[index].wins = Int(self.csv!.rows[index].first!.1)
+                                self.csv!.rows[index].popFirst()
+                            case "losses":
+                                self.masterTeams[index].losses = Int(self.csv!.rows[index].first!.1)
+                                self.csv!.rows[index].popFirst()
+                            case "teamname":
+                                self.masterTeams[index].teamName = self.csv!.rows[index].first!.1
+                                self.csv!.rows[index].popFirst()
+                            case "sp":
+                                self.masterTeams[index].scorePoints = Int(self.csv!.rows[index].first!.1)
+                                self.csv!.rows[index].popFirst()
+                            case "ap":
+                                self.masterTeams[index].autonomousPoints = Int(self.csv!.rows[index].first!.1)
+                                self.csv!.rows[index].popFirst()
+                            case "teamnum":
+                                self.masterTeams[index].num = self.csv!.rows[index].first!.1
+                                self.csv!.rows[index].popFirst()
+                            default:
+                                self.csv!.rows[index].popFirst()
+                            }
+                        }
+                    }
+                    
+                    if let inputTeam = self.searchForTeam() {
+                        self.TeamRecord.text = "\(inputTeam.wins!)-\(inputTeam.losses!)-\(inputTeam.ties!)"
+                        self.TeamRank.text = String(inputTeam.rank!)
+                        self.AutonomousPoints.text = String(inputTeam.autonomousPoints!)
+                        self.ScorePoints.text = String(inputTeam.scorePoints!)
+                    }
+                }
+                else {
+                    print(error)
+                    self.csvString = "ERROR"
+                }
+            })
+            task.resume()
+        }
+    }
     
     
     // MARK: - Navigation
