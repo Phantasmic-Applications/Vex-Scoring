@@ -24,7 +24,7 @@ class AddViewController: UIViewController {
     var scorepoints: String = ""
     var teamname: String = ""
  
-    
+    var newitem : Model?
     
     var csv : CSV?
     var csvString = ""
@@ -39,18 +39,12 @@ class AddViewController: UIViewController {
         super.viewDidLoad()
         
         if (editingItem != nil) {
-          
             TextFieldRobot.text = editingItem.valueForKey("robot") as? String
             TextFieldAuton.text = editingItem.valueForKey("teamauton") as? String
             TextFieldTeamNum.text = editingItem.valueForKey("teamnum") as? String
-            
-            
         }
         
         self.navigationItem.setHidesBackButton(true, animated:true);
-        
-
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -76,7 +70,6 @@ class AddViewController: UIViewController {
     
     
     @IBAction func Save(sender: AnyObject) {
-        
         let Appdel: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         
         let theContext: NSManagedObjectContext = Appdel.managedObjectContext
@@ -91,21 +84,29 @@ class AddViewController: UIViewController {
             
             
         } else {
-            let newitem = Model(entity: theEnt!, insertIntoManagedObjectContext: theContext)
+            newitem = Model(entity: theEnt!, insertIntoManagedObjectContext: theContext)
             
-            newitem.robot = TextFieldRobot.text!
-            newitem.teamauton = TextFieldAuton.text!
-            newitem.teamnum = TextFieldTeamNum.text!
+            newitem!.robot = TextFieldRobot.text!
+            newitem!.teamauton = TextFieldAuton.text!
+            newitem!.teamnum = TextFieldTeamNum.text!
             
             
             //ANDREW: THIS IS THE COMMENT I AM TALKING ABOUT: ADD CODE TO MAKE .rank and .record TO GO TO THEIR STRINGS
             
-            newitem.rank = ""
-            newitem.record = ""
-            newitem.autonomouspoints = ""
-            newitem.scorepoints = ""
-            newitem.teamname = ""
+            newitem!.rank = ""
+            newitem!.record = ""
+            newitem!.autonomouspoints = ""
+            newitem!.scorepoints = ""
+            newitem!.teamname = ""
             downloadCSV()
+            
+            if let inputTeam = searchForTeam() {
+                newitem!.rank = String(inputTeam.rank)
+                newitem!.record = "\(inputTeam.wins) - \(inputTeam.losses) - \(inputTeam.ties)"
+                newitem!.autonomouspoints = String(inputTeam.autonomousPoints)
+                newitem!.scorepoints = String(inputTeam.scorePoints)
+                newitem!.teamname = inputTeam.teamName!
+            }
         }
         
         do {
@@ -117,6 +118,16 @@ class AddViewController: UIViewController {
         }
         
         self.navigationController?.popViewControllerAnimated(true)
+    }
+    
+    func searchForTeam() -> Team? {
+        let teamNumber = newitem!.teamnum
+        for team in masterTeams {
+            if teamNumber == team.num {
+                return team
+            }
+        }
+        return nil
     }
     
     func downloadCSV() {
