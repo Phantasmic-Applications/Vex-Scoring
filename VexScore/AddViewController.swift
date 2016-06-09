@@ -163,6 +163,9 @@ class AddViewController: UIViewController {
                                 case "ap":
                                     self.masterTeams[index].autonomousPoints = Int(self.csv!.rows[index].first!.1)
                                     self.csv!.rows[index].popFirst()
+                                case "teamnum":
+                                    self.masterTeams[index].num = self.csv!.rows[index].first!.1
+                                    self.csv!.rows[index].popFirst()
                                 default:
                                     self.csv!.rows[index].popFirst()
                             }
