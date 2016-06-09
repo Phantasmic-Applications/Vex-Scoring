@@ -11,12 +11,10 @@ import CoreData
 
 
 class TableViewController: UITableViewController {
-    
     var List: Array<AnyObject> = []
     
     var url: String = ""
     
-
     override func viewDidLoad() {
        self.navigationItem.setHidesBackButton(true, animated:true);
         super.viewDidLoad()
@@ -43,20 +41,13 @@ class TableViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return List.count
-        
-        
     }
 
     
     override func viewDidAppear(animated: Bool) {
-        
         let AppDel: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         
-        
-        
         let Context: NSManagedObjectContext = AppDel.managedObjectContext
-        
-        
         
         let request = NSFetchRequest(entityName: "TeamList1")
         
@@ -67,7 +58,6 @@ class TableViewController: UITableViewController {
     
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-       
         let cell: TableViewCell = tableView.dequeueReusableCellWithIdentifier("Cell") as! TableViewCell
         
         let data: NSManagedObject = List[indexPath.row] as! NSManagedObject
@@ -114,17 +104,14 @@ class TableViewController: UITableViewController {
         var error: NSError? = nil
         
         do {
-            
             try Context.save()
             
         } catch let error1 as NSError {
-            
             error = error1
             print(error)
             abort()
             
         }
-        
     }
     
 
@@ -148,9 +135,7 @@ class TableViewController: UITableViewController {
 
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
         if segue.identifier == "ShowInfo" {
-            
             let selectedItem: NSManagedObject = List[self.tableView.indexPathForSelectedRow!.row] as! NSManagedObject
             
             let ViewCon: DisplayViewController = segue.destinationViewController as! DisplayViewController
@@ -161,17 +146,7 @@ class TableViewController: UITableViewController {
             ViewCon.rank = selectedItem.valueForKey("rank") as! String
             ViewCon.record = selectedItem.valueForKey("record") as! String
             
-            
             ViewCon.existingItem = selectedItem
-            
-            
-            
-            
-            
-            
         }
-      
     }
-    
-
 }

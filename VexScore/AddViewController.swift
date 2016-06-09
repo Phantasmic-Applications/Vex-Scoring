@@ -35,7 +35,6 @@ class AddViewController: UIViewController {
     
 
     override func viewDidLoad() {
-        
         super.viewDidLoad()
         
         if (editingItem != nil) {
@@ -77,11 +76,9 @@ class AddViewController: UIViewController {
         
         
         if (editingItem != nil) {
-            
             editingItem.setValue(TextFieldTeamNum.text as String?, forKey: "teamnum")
             editingItem.setValue(TextFieldAuton.text as String?, forKey: "teamauton")
             editingItem.setValue(TextFieldRobot.text as String?, forKey: "robot")
-            
             
         } else {
             newitem = Model(entity: theEnt!, insertIntoManagedObjectContext: theContext)
@@ -98,13 +95,12 @@ class AddViewController: UIViewController {
             newitem!.autonomouspoints = ""
             newitem!.scorepoints = ""
             newitem!.teamname = ""
-            downloadCSV()
         }
         
+        downloadCSV()
+        
         do {
-            
             try theContext.save()
-            
         } catch _ {
             
         }
@@ -113,7 +109,7 @@ class AddViewController: UIViewController {
     }
     
     func searchForTeam() -> Team? {
-        let teamNumber = newitem!.teamnum
+        let teamNumber = TextFieldTeamNum.text as String?
         for team in masterTeams {
             if teamNumber == team.num {
                 return team
@@ -123,7 +119,6 @@ class AddViewController: UIViewController {
     }
     
     func downloadCSV() {
-        masterTeams = [Team]()
         let url = NSURL(string: "http://ajax.robotevents.com/tm/results/rankings/?format=csv&sku=RE-VRC-13-8611&div=1")
         
         if url != nil {
@@ -179,11 +174,20 @@ class AddViewController: UIViewController {
                     }
                     
                     if let inputTeam = self.searchForTeam() {
-                        self.newitem!.rank = String(inputTeam.rank!)
-                        self.newitem!.record = "\(inputTeam.wins!)-\(inputTeam.losses!)-\(inputTeam.ties!)"
-                        //self.newitem!.autonomouspoints = String(inputTeam.autonomousPoints!)
-                        self.newitem!.scorepoints = String(inputTeam.scorePoints!)
-                        self.newitem!.teamname = inputTeam.teamName!
+                        if self.newitem != nil {
+                            self.newitem!.rank = String(inputTeam.rank!)
+                            self.newitem!.record = "\(inputTeam.wins!)-\(inputTeam.losses!)-\(inputTeam.ties!)"
+                            //self.newitem!.autonomouspoints = String(inputTeam.autonomousPoints!)
+                            self.newitem!.scorepoints = String(inputTeam.scorePoints!)
+                            self.newitem!.teamname = inputTeam.teamName!
+                        }
+                        else {
+                            self.editingItem.setValue(String(inputTeam.rank!), forKey: "rank")
+                            self.editingItem.setValue("\(inputTeam.wins!)-\(inputTeam.losses!)-\(inputTeam.ties!)", forKey: "record")
+                            self.editingItem.setValue(inputTeam.teamName!, forKey: "teamname")
+                            //self.existingItem.setValue(String(inputTeam.autonomousPoints!), forKey: "autonomouspoints")
+                            self.editingItem.setValue(String(inputTeam.scorePoints!), forKey: "scorepoints")
+                        }
                     }
                 }
                 else {

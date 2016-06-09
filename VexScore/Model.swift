@@ -19,9 +19,4 @@ class Model: NSManagedObject {
     @NSManaged var autonomouspoints: String
     @NSManaged var scorepoints: String
     @NSManaged var teamname: String
-
-    
-    
-    
-
 }

@@ -9,8 +9,6 @@
 import UIKit
 
 class TableViewCell: UITableViewCell {
-    
-    
     @IBOutlet weak var TeamNum: UILabel!
     @IBOutlet weak var TeamAuton: UILabel!
     @IBOutlet weak var RobotInfo: UILabel!
@@ -18,9 +16,6 @@ class TableViewCell: UITableViewCell {
     @IBOutlet weak var TeamRecord: UILabel!
     @IBOutlet weak var TeamName: UILabel!
     
-    
-    
-
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
