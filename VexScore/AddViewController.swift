@@ -90,6 +90,8 @@ class AddViewController: UIViewController {
             newitem.teamauton = TextFieldAuton.text!
             newitem.teamnum = TextFieldTeamNum.text!
             
+            //ANDREW: THIS IS THE COMMENT I AM TALKING ABOUT: ADD CODE TO MAKE .rank and .record TO GO TO THEIR STRINGS
+            
             newitem.rank = ""
             newitem.record = ""
             
