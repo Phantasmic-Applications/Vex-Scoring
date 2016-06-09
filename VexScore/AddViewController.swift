@@ -72,7 +72,7 @@ class AddViewController: UIViewController {
         let Appdel: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         
         let theContext: NSManagedObjectContext = Appdel.managedObjectContext
-        let theEnt = NSEntityDescription.entityForName("TeamList", inManagedObjectContext: theContext)
+        let theEnt = NSEntityDescription.entityForName("TeamList1", inManagedObjectContext: theContext)
         
         
         if (editingItem != nil) {
@@ -90,8 +90,8 @@ class AddViewController: UIViewController {
             newitem.teamauton = TextFieldAuton.text!
             newitem.teamnum = TextFieldTeamNum.text!
             
-            //newitem.rank = (find a teams rank)
-            //newitem.record = (find a teams record)
+            newitem.rank = ""
+            newitem.record = ""
             
             
         }

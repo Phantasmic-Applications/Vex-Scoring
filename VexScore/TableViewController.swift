@@ -52,8 +52,13 @@ class TableViewController: UITableViewController {
         
         let AppDel: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         
+        
+        
         let Context: NSManagedObjectContext = AppDel.managedObjectContext
-        let request = NSFetchRequest(entityName: "TeamList")
+        
+        
+        
+        let request = NSFetchRequest(entityName: "TeamList1")
         
         List = try! Context.executeFetchRequest(request)
         tableView.reloadData()
@@ -70,6 +75,8 @@ class TableViewController: UITableViewController {
         cell.TeamNum?.text = data.valueForKey("teamnum") as? String
         cell.RobotInfo?.text = data.valueForKey("robot") as? String
         cell.TeamAuton?.text = data.valueForKey("teamauton") as? String
+        cell.TeamRank?.text = data.valueForKey("rank") as? String
+        cell.TeamRecord?.text = data.valueForKey("record") as? String
         
         return cell
         
@@ -112,6 +119,7 @@ class TableViewController: UITableViewController {
             error = error1
             print(error)
             abort()
+            
         }
         
     }

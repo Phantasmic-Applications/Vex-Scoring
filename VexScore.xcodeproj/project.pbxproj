@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0611860D1D0990B5004C3193 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0611860C1D0990B5004C3193 /* CoreData.framework */; };
+		061F316F1D08A979001A3C95 /* TitleScreenv1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 061F316E1D08A979001A3C95 /* TitleScreenv1.jpg */; };
 		06746E611D030CD50041D246 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06746E601D030CD50041D246 /* AppDelegate.swift */; };
 		06746E661D030CD50041D246 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06746E641D030CD50041D246 /* Main.storyboard */; };
 		06746E691D030CD50041D246 /* VexScore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 06746E671D030CD50041D246 /* VexScore.xcdatamodeld */; };
@@ -14,7 +16,6 @@
 		06746E6E1D030CD50041D246 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06746E6C1D030CD50041D246 /* LaunchScreen.storyboard */; };
 		06746E791D030CD50041D246 /* VexScoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06746E781D030CD50041D246 /* VexScoreTests.swift */; };
 		06746E841D030CD50041D246 /* VexScoreUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06746E831D030CD50041D246 /* VexScoreUITests.swift */; };
-		06746E921D030E2B0041D246 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06746E911D030E2B0041D246 /* CoreData.framework */; };
 		06746E941D03110B0041D246 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06746E931D03110B0041D246 /* TableViewController.swift */; };
 		06746E961D0311260041D246 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06746E951D0311260041D246 /* TableViewCell.swift */; };
 		06746E981D0311500041D246 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06746E971D0311500041D246 /* AddViewController.swift */; };
@@ -40,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0611860C1D0990B5004C3193 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		061F316E1D08A979001A3C95 /* TitleScreenv1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = TitleScreenv1.jpg; sourceTree = "<group>"; };
 		06746E5D1D030CD50041D246 /* VexScore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VexScore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06746E601D030CD50041D246 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		06746E651D030CD50041D246 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -53,7 +56,6 @@
 		06746E7F1D030CD50041D246 /* VexScoreUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VexScoreUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		06746E831D030CD50041D246 /* VexScoreUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VexScoreUITests.swift; sourceTree = "<group>"; };
 		06746E851D030CD50041D246 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		06746E911D030E2B0041D246 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		06746E931D03110B0041D246 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		06746E951D0311260041D246 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		06746E971D0311500041D246 /* AddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
@@ -66,7 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				06746E921D030E2B0041D246 /* CoreData.framework in Frameworks */,
+				0611860D1D0990B5004C3193 /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,7 +92,7 @@
 		06746E541D030CD50041D246 = {
 			isa = PBXGroup;
 			children = (
-				06746E911D030E2B0041D246 /* CoreData.framework */,
+				0611860C1D0990B5004C3193 /* CoreData.framework */,
 				06746E5F1D030CD50041D246 /* VexScore */,
 				06746E771D030CD50041D246 /* VexScoreTests */,
 				06746E821D030CD50041D246 /* VexScoreUITests */,
@@ -118,6 +120,7 @@
 				06EFB1411D05037F000D1C15 /* DisplayViewController.swift */,
 				06746E991D0313170041D246 /* Model.swift */,
 				06746E641D030CD50041D246 /* Main.storyboard */,
+				061F316E1D08A979001A3C95 /* TitleScreenv1.jpg */,
 				06746E6A1D030CD50041D246 /* Assets.xcassets */,
 				06746E6C1D030CD50041D246 /* LaunchScreen.storyboard */,
 				06746E6F1D030CD50041D246 /* Info.plist */,
@@ -250,6 +253,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				06746E6E1D030CD50041D246 /* LaunchScreen.storyboard in Resources */,
+				061F316F1D08A979001A3C95 /* TitleScreenv1.jpg in Resources */,
 				06746E6B1D030CD50041D246 /* Assets.xcassets in Resources */,
 				06746E661D030CD50041D246 /* Main.storyboard in Resources */,
 			);

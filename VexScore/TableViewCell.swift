@@ -14,6 +14,9 @@ class TableViewCell: UITableViewCell {
     @IBOutlet weak var TeamNum: UILabel!
     @IBOutlet weak var TeamAuton: UILabel!
     @IBOutlet weak var RobotInfo: UILabel!
+    @IBOutlet weak var TeamRank: UILabel!
+    @IBOutlet weak var TeamRecord: UILabel!
+    
     
     
 
