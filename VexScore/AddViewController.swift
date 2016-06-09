@@ -99,14 +99,6 @@ class AddViewController: UIViewController {
             newitem!.scorepoints = ""
             newitem!.teamname = ""
             downloadCSV()
-            
-            if let inputTeam = searchForTeam() {
-                newitem!.rank = String(inputTeam.rank)
-                newitem!.record = "\(inputTeam.wins) - \(inputTeam.losses) - \(inputTeam.ties)"
-                newitem!.autonomouspoints = String(inputTeam.autonomousPoints)
-                newitem!.scorepoints = String(inputTeam.scorePoints)
-                newitem!.teamname = inputTeam.teamName!
-            }
         }
         
         do {
@@ -181,6 +173,14 @@ class AddViewController: UIViewController {
                                     self.csv!.rows[index].popFirst()
                             }
                         }
+                    }
+                    
+                    if let inputTeam = self.searchForTeam() {
+                        self.newitem!.rank = String(inputTeam.rank!)
+                        self.newitem!.record = "\(inputTeam.wins!)-\(inputTeam.losses!)-\(inputTeam.ties!)"
+                        //self.newitem!.autonomouspoints = String(inputTeam.autonomousPoints!)
+                        self.newitem!.scorepoints = String(inputTeam.scorePoints!)
+                        self.newitem!.teamname = inputTeam.teamName!
                     }
                 }
                 else {
