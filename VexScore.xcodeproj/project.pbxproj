@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04A8F8441D0887CD0080BF87 /* CSV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A8F83F1D0887CD0080BF87 /* CSV.swift */; };
+		04A8F8451D0887CD0080BF87 /* FieldSequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A8F8401D0887CD0080BF87 /* FieldSequence.swift */; };
+		04A8F8461D0887CD0080BF87 /* HeaderSequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A8F8411D0887CD0080BF87 /* HeaderSequence.swift */; };
+		04A8F8471D0887CD0080BF87 /* RowSequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A8F8421D0887CD0080BF87 /* RowSequence.swift */; };
+		04A8F8481D0887CD0080BF87 /* String+Lines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A8F8431D0887CD0080BF87 /* String+Lines.swift */; };
+		04A8F84B1D088BA80080BF87 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A8F84A1D088BA80080BF87 /* Team.swift */; };
 		06746E611D030CD50041D246 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06746E601D030CD50041D246 /* AppDelegate.swift */; };
 		06746E661D030CD50041D246 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06746E641D030CD50041D246 /* Main.storyboard */; };
 		06746E691D030CD50041D246 /* VexScore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 06746E671D030CD50041D246 /* VexScore.xcdatamodeld */; };
@@ -40,6 +46,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		04A8F83F1D0887CD0080BF87 /* CSV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSV.swift; sourceTree = "<group>"; };
+		04A8F8401D0887CD0080BF87 /* FieldSequence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FieldSequence.swift; sourceTree = "<group>"; };
+		04A8F8411D0887CD0080BF87 /* HeaderSequence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderSequence.swift; sourceTree = "<group>"; };
+		04A8F8421D0887CD0080BF87 /* RowSequence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RowSequence.swift; sourceTree = "<group>"; };
+		04A8F8431D0887CD0080BF87 /* String+Lines.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Lines.swift"; sourceTree = "<group>"; };
+		04A8F84A1D088BA80080BF87 /* Team.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		06746E5D1D030CD50041D246 /* VexScore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VexScore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06746E601D030CD50041D246 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		06746E651D030CD50041D246 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -87,6 +99,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04A8F8491D088AEB0080BF87 /* CSV */ = {
+			isa = PBXGroup;
+			children = (
+				04A8F83F1D0887CD0080BF87 /* CSV.swift */,
+				04A8F8401D0887CD0080BF87 /* FieldSequence.swift */,
+				04A8F8411D0887CD0080BF87 /* HeaderSequence.swift */,
+				04A8F8421D0887CD0080BF87 /* RowSequence.swift */,
+				04A8F8431D0887CD0080BF87 /* String+Lines.swift */,
+			);
+			name = CSV;
+			sourceTree = "<group>";
+		};
 		06746E541D030CD50041D246 = {
 			isa = PBXGroup;
 			children = (
@@ -117,6 +141,8 @@
 				06746E971D0311500041D246 /* AddViewController.swift */,
 				06EFB1411D05037F000D1C15 /* DisplayViewController.swift */,
 				06746E991D0313170041D246 /* Model.swift */,
+				04A8F84A1D088BA80080BF87 /* Team.swift */,
+				04A8F8491D088AEB0080BF87 /* CSV */,
 				06746E641D030CD50041D246 /* Main.storyboard */,
 				06746E6A1D030CD50041D246 /* Assets.xcassets */,
 				06746E6C1D030CD50041D246 /* LaunchScreen.storyboard */,
@@ -276,10 +302,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04A8F8441D0887CD0080BF87 /* CSV.swift in Sources */,
+				04A8F8461D0887CD0080BF87 /* HeaderSequence.swift in Sources */,
+				04A8F84B1D088BA80080BF87 /* Team.swift in Sources */,
+				04A8F8481D0887CD0080BF87 /* String+Lines.swift in Sources */,
 				06746E981D0311500041D246 /* AddViewController.swift in Sources */,
+				04A8F8451D0887CD0080BF87 /* FieldSequence.swift in Sources */,
 				06EFB1421D05037F000D1C15 /* DisplayViewController.swift in Sources */,
 				06746E691D030CD50041D246 /* VexScore.xcdatamodeld in Sources */,
 				06746E961D0311260041D246 /* TableViewCell.swift in Sources */,
+				04A8F8471D0887CD0080BF87 /* RowSequence.swift in Sources */,
 				06746E9A1D0313170041D246 /* Model.swift in Sources */,
 				06746E941D03110B0041D246 /* TableViewController.swift in Sources */,
 				06746E611D030CD50041D246 /* AppDelegate.swift in Sources */,
