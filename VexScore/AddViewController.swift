@@ -105,9 +105,7 @@ class AddViewController: UIViewController {
             newitem.autonomouspoints = ""
             newitem.scorepoints = ""
             newitem.teamname = ""
-            
-            
-            
+            downloadCSV()
         }
         
         do {
@@ -141,22 +139,29 @@ class AddViewController: UIViewController {
                     self.csv!.columns.popFirst()
                     
                     for index in 0..<self.csv!.rows.count {
+                        self.masterTeams.append(Team())
                         for data in 0..<self.csv!.rows[index].count {
                             switch self.csv!.rows[index].first!.0 {
                                 case "rank":
-                                    self.rank = self.csv!.rows[index].first!.1
+                                    self.masterTeams[index].rank = Int(self.csv!.rows[index].first!.1)
                                     self.csv!.rows[index].popFirst()
                                 case "ties":
+                                    self.masterTeams[index].ties = Int(self.csv!.rows[index].first!.1)
                                     self.csv!.rows[index].popFirst()
                                 case "wins":
+                                    self.masterTeams[index].wins = Int(self.csv!.rows[index].first!.1)
                                     self.csv!.rows[index].popFirst()
                                 case "losses":
+                                    self.masterTeams[index].losses = Int(self.csv!.rows[index].first!.1)
                                     self.csv!.rows[index].popFirst()
                                 case "teamname":
+                                    self.masterTeams[index].teamName = self.csv!.rows[index].first!.1
                                     self.csv!.rows[index].popFirst()
                                 case "sp":
+                                    self.masterTeams[index].scorePoints = Int(self.csv!.rows[index].first!.1)
                                     self.csv!.rows[index].popFirst()
                                 case "ap":
+                                    self.masterTeams[index].autonomousPoints = Int(self.csv!.rows[index].first!.1)
                                     self.csv!.rows[index].popFirst()
                                 default:
                                     self.csv!.rows[index].popFirst()

@@ -25,6 +25,7 @@ class Team : NSObject, NSCoding {
     var deleted : Int?
     var notes : String?
     var location : String?
+    var autonomousPoints : Int?
     
     func setName(newName: String) {self.teamName = newName}
     
