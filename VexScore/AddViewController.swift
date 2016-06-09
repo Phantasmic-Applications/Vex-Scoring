@@ -144,6 +144,7 @@ class AddViewController: UIViewController {
                         for data in 0..<self.csv!.rows[index].count {
                             switch self.csv!.rows[index].first!.0 {
                                 case "rank":
+                                    self.rank = self.csv!.rows[index].first!.1
                                     self.csv!.rows[index].popFirst()
                                 case "ties":
                                     self.csv!.rows[index].popFirst()
