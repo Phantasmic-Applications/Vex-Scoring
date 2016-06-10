@@ -69,6 +69,9 @@ class TableViewController: UITableViewController {
         cell.TeamRecord?.text = data.valueForKey("record") as? String
         cell.TeamName?.text = data.valueForKey("teamname") as? String
         
+        cell.layer.borderWidth = 2.0
+        cell.layer.borderColor = UIColor.blackColor().CGColor
+        
         
         
         return cell
